@@ -20,6 +20,9 @@
         --cinza: #d9e0e4;
         --cinza-suave: #edf2f4;
         --cinza-claro: #fafdff;
+
+        --verde-success: #eaf8ef;
+        --text-success: #1d6b3b;
     }
 
 
@@ -148,7 +151,6 @@
             .satisfacao-section {
                 background: #fff;
                 padding: 60px 20px;
-                color: var(--azul-crefaz);
             }
 
             .satisfacao-container {
@@ -161,6 +163,7 @@
                 margin: 0 0 12px;
                 color: var(--laranja-crefaz);
                 letter-spacing: -0.030rem;
+                text-align: center;
             }
 
             .satisfacao-container h2 {
@@ -169,6 +172,8 @@
                 margin: 20px 0 20px;
                 color: var(--azul-crefaz);
                 letter-spacing: -0.030rem;
+                text-align: center;
+                line-height: 1.4;
             }
 
             .question {
@@ -264,10 +269,10 @@
             .success-message {
                 display: none;
                 margin-top: 28px;
-                padding: 24px;
+                padding: 40px;
                 border-radius: 18px;
-                background: #eaf8ef;
-                color: var(--azul-crefaz);
+                background: var(--verde-success);
+                color: var(--text-success);
                 text-align: center;
             }
 
@@ -279,7 +284,7 @@
             .success-message p {
                 margin: 0;
                 font-size: 16px;
-                color: #1d6b3b;
+                color: var(--text-success);
             }
 
             .number-question {
@@ -301,24 +306,42 @@
                 display: flex;
             }
 
+            .label-mobile {
+                display: none;
+                justify-content: space-between;
+            }
+
+
             @media (max-width: 767px) {
+
+                .satisfacao-section {
+                    padding: 60px 40px;
+                }
+
                 .scale-row {
                     grid-template-columns: 1fr;
                     gap: 14px;
                 }
 
-                .scale-label,
-                .scale-label.right {
-                    text-align: center;
+                .scale-label.desktop {
+                    display: none;
                 }
 
-                .scale-options {
-                    justify-content: center;
-                    flex-wrap: wrap;
+                .label-mobile {
+                    display: flex;
+                    justify-content: space-between;
                 }
 
                 .satisfacao-container h1 {
-                    font-size: 34px;
+                    font-size: 50px;
+                }
+
+                .question h3 {
+                    font-size: 26px;
+                }
+
+                .scale-label {
+                    font-size: 16px;
                 }
             }
         </style>
@@ -336,7 +359,12 @@
                         </h3>
                     </div>
                     <div class="scale-row">
-                        <span class="scale-label">Muito insatisfeito</span>
+                        <div class="label-mobile">
+                            <span class="scale-label">Muito insatisfeito</span>
+                            <span class="scale-label right">Muito satisfeito</span>
+                        </div>
+
+                        <span class="scale-label desktop">Muito insatisfeito</span>
 
                         <div class="scale-options" data-scale="nota_atendimento">
                             <label class="scale-option"><input type="radio" name="nota_atendimento" value="1"
@@ -351,7 +379,7 @@
                                     value="5"><span>5</span></label>
                         </div>
 
-                        <span class="scale-label right">Muito satisfeito</span>
+                        <span class="scale-label desktop right">Muito satisfeito</span>
                     </div>
                     <p>Selecione o número que melhor representa sua avaliação.</p>
 
@@ -366,7 +394,12 @@
                     </div>
 
                     <div class="scale-row">
-                        <span class="scale-label">Muito insatisfeito</span>
+                        <div class="label-mobile">
+                            <span class="scale-label">Muito insatisfeito</span>
+                            <span class="scale-label right">Muito satisfeito</span>
+                        </div>
+
+                        <span class="scale-label desktop">Muito insatisfeito</span>
 
                         <div class="scale-options" data-scale="solicitacao_resolvida">
                             <label class="scale-option"><input type="radio" name="solicitacao_resolvida" value="1"
@@ -381,7 +414,7 @@
                                     value="5"><span>5</span></label>
                         </div>
 
-                        <span class="scale-label right">Muito satisfeito</span>
+                        <span class="scale-label desktop right">Muito satisfeito</span>
                     </div>
                     <p>Selecione o número que melhor representa seu atendimento.</p>
 
@@ -394,7 +427,12 @@
                         <h3>Qual a chance de você recomendar a Crefaz pra outra pessoa?</h3>
                     </div>
                     <div class="scale-row">
-                        <span class="scale-label">Com certeza não indicaria</span>
+                        <div class="label-mobile">
+                            <span class="scale-label">Com certeza não indicaria</span>
+                            <span class="scale-label right">Com certeza indicaria</span>
+                        </div>
+
+                        <span class="scale-label desktop">Com certeza não indicaria</span>
 
                         <div class="scale-options" data-scale="recomendacao">
                             <label class="scale-option"><input type="radio" name="recomendacao" value="1"
@@ -409,7 +447,7 @@
                                     value="5"><span>5</span></label>
                         </div>
 
-                        <span class="scale-label right">Com certeza indicaria</span>
+                        <span class="scale-label desktop right">Com certeza indicaria</span>
                     </div>
                     <p>Selecione o número que melhor representa sua avaliação.</p>
 
